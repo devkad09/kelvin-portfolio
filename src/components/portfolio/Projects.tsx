@@ -32,7 +32,7 @@ const projects = [
     description: "A bold, animated landing page built with zero JavaScript — pure CSS animations, grid layouts, and custom properties.",
     tech: ["HTML5", "CSS3", "Animations"],
     categories: ["CSS"] as Category[],
-    demo: "#",
+    demo: "https://pluse-landing.vercel.app",
     repo: "#",
   },
 ];
@@ -61,11 +61,10 @@ export const Projects = () => {
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${
-                active === f
-                  ? "bg-gradient-primary text-primary-foreground border-transparent shadow-glow"
-                  : "bg-secondary/50 border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
-              }`}
+              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${active === f
+                ? "bg-gradient-primary text-primary-foreground border-transparent shadow-glow"
+                : "bg-secondary/50 border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+                }`}
             >
               {f}
             </button>
