@@ -63,12 +63,15 @@ export const Projects = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-4">
           {visible.map((p, i) => (
-            <article
+            <a
               key={p.title}
-              className="group relative flex flex-col glass-card rounded-[3rem] overflow-hidden transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)] reveal"
+              href={p.demo === "#" ? "https://github.com/devkad09" : p.demo}
+              target="_blank"
+              rel="noreferrer"
+              className="group relative flex flex-col glass-card rounded-[3rem] overflow-hidden transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)] reveal no-underline cursor-pointer"
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="aspect-[4/3] bg-white/[0.02] relative overflow-hidden">
+              <div className="aspect-[4/3] bg-white/[0.02] relative overflow-hidden pointer-events-none">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="absolute inset-0 flex items-center justify-center">
                    <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-3xl border border-white/10 flex items-center justify-center group-hover:scale-125 transition-transform duration-700">
@@ -77,7 +80,7 @@ export const Projects = () => {
                 </div>
               </div>
               
-              <div className="p-10 flex-1 flex flex-col relative">
+              <div className="p-10 flex-1 flex flex-col relative pointer-events-none">
                 <div className="absolute top-0 right-10 -translate-y-1/2 flex gap-2">
                    {p.tech.slice(0, 2).map((t) => (
                      <span key={t} className="px-4 py-1 rounded-full bg-white text-black text-[9px] font-black uppercase tracking-widest shadow-2xl">
@@ -86,7 +89,7 @@ export const Projects = () => {
                    ))}
                 </div>
 
-                <h3 className="text-3xl font-black mb-4 tracking-tighter group-hover:text-primary transition-colors">
+                <h3 className="text-3xl font-black mb-4 tracking-tighter group-hover:text-primary transition-colors text-white">
                   {p.title}
                 </h3>
                 
@@ -95,23 +98,25 @@ export const Projects = () => {
                 </p>
                 
                 <div className="mt-auto flex items-center justify-between">
-                   <a
-                    href={p.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-primary transition-colors"
-                   >
+                   <div className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 group-hover:text-primary transition-colors">
                     Explore <i className="fa-solid fa-plus ml-2" />
-                   </a>
+                   </div>
                    
-                   <div className="flex gap-4 opacity-20 group-hover:opacity-100 transition-opacity">
-                      <a href={p.repo} target="_blank" rel="noreferrer" className="text-white hover:text-primary transition-colors">
+                   <div className="flex gap-4 opacity-20 group-hover:opacity-100 transition-opacity pointer-events-auto">
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          window.open(p.repo, '_blank');
+                        }}
+                        className="text-white hover:text-primary transition-colors"
+                      >
                          <i className="fa-brands fa-github text-xl" />
-                      </a>
+                      </button>
                    </div>
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
