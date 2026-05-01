@@ -11,7 +11,7 @@ export const About = () => {
             </h2>
             <div className="space-y-6 text-muted-foreground/80 leading-relaxed text-lg font-light">
               <p>
-                I'm Kelvin, a frontend engineer dedicated to building the next generation of web interfaces. My approach blends technical precision with artistic vision.
+                I'm Kelvin Atsu Djayouri, a frontend engineer dedicated to building the next generation of web interfaces. My approach blends technical precision with artistic vision.
               </p>
               <p>
                 Based in Ghana, I specialize in architecting high-performance React applications that aren't just functional, but emotionally resonant. Every line of code is an opportunity to elevate the user experience.

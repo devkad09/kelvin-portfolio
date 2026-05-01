@@ -13,14 +13,6 @@ const projects = [
     repo: "#",
   },
   {
-    title: "Stratus Weather App",
-    description: "A glassmorphism weather app fetching live forecast data from a REST API, with geolocation and 7-day predictions.",
-    tech: ["JavaScript", "REST API", "CSS3"],
-    categories: ["JS"] as Category[],
-    demo: "#",
-    repo: "#",
-  },
-  {
     title: "Pure CSS Landing Page",
     description: "A bold, animated landing page built with zero JavaScript — pure CSS animations, grid layouts, and custom properties.",
     tech: ["HTML5", "CSS3", "Animations"],
@@ -30,7 +22,7 @@ const projects = [
   },
 ];
 
-const filters: Category[] = ["All", "React", "JS", "CSS"];
+const filters: Category[] = ["All", "React", "CSS"];
 
 export const Projects = () => {
   const [active, setActive] = useState<Category>("All");
