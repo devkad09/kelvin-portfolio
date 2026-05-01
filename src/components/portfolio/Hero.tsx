@@ -51,11 +51,9 @@ export const Hero = () => {
 
         <h1 
           className="font-black leading-[0.9] tracking-[-0.06em] uppercase mb-12 reveal px-4"
-          style={{ fontSize: "clamp(3.5rem, 12vw, 11rem)" }}
+          style={{ fontSize: "clamp(4rem, 15vw, 15rem)" }}
         >
-           <span className="text-white">Kelvin</span>
-           <br />
-           <span className="gradient-text">Djayouri</span>
+           <span className="gradient-text">Kelvin</span>
         </h1>
 
         <div className="max-w-4xl mx-auto reveal" style={{ transitionDelay: "200ms" }}>

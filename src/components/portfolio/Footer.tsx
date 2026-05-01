@@ -22,7 +22,7 @@ export const Footer = () => {
         </div>
 
         <div className="text-xs text-muted-foreground/40 text-center md:text-right font-medium tracking-widest uppercase">
-          © {new Date().getFullYear()} Kelvin Atsu Djayouri. <br />
+          © {new Date().getFullYear()} Kelvin. <br />
           All Rights Reserved.
         </div>
 

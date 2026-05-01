@@ -46,7 +46,7 @@ export const Navbar = () => {
       <nav className={`container-narrow flex items-center justify-between px-8 md:px-16 transition-all duration-700 ${scrolled ? "h-20 bg-black/40 backdrop-blur-3xl border border-white/5 rounded-full shadow-2xl" : "h-20 bg-transparent"}`}>
         <button onClick={() => go("home")} className="group flex items-center gap-4">
           <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-black transform transition-transform group-hover:rotate-[360deg] duration-1000">K</div>
-          <span className="text-white font-black tracking-[-0.05em] text-xl hidden sm:block">KELVIN.ATSU</span>
+          <span className="text-white font-black tracking-[-0.05em] text-xl hidden sm:block uppercase">KELVIN</span>
         </button>
 
         <ul className="hidden lg:flex items-center gap-12">
