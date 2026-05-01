@@ -1,36 +1,42 @@
 export const About = () => {
   return (
-    <section id="about" className="section-padding">
-      <div className="container-narrow max-w-4xl mx-auto text-center reveal">
-        <span className="text-primary font-mono text-sm uppercase tracking-widest">About Me</span>
-        <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-          A passionate developer who <span className="gradient-text">loves clean code</span>.
-        </h2>
-        <p className="text-muted-foreground leading-relaxed mb-4">
-          I'm Kelvin Atsu Djayouri, a frontend developer based in Ghana with a strong focus on
-          building responsive, accessible, and high-performance web interfaces. I work with
-          React, TypeScript, JavaScript, HTML, CSS, Tailwind CSS, and modern UI patterns to
-          turn ideas and designs into polished digital experiences that feel fast, clean, and intuitive.
-        </p>
-        <p className="text-muted-foreground leading-relaxed mb-8">
-          In 2026, my current focus is sharpening my expertise in advanced React workflows,
-          scalable component architecture, design systems, API integration, performance optimization,
-          and frontend developer tooling. I'm especially interested in creating products that combine
-          strong visual design with maintainable code and great user experience.
-        </p>
+    <section id="about" className="section-padding bg-white/[0.01]">
+      <div className="container-narrow max-w-5xl mx-auto reveal px-4">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Our Story</span>
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter leading-none">
+              Crafting Digital <br />
+              <span className="text-primary">Excellence</span>.
+            </h2>
+            <div className="space-y-6 text-muted-foreground/80 leading-relaxed text-lg font-light">
+              <p>
+                I'm Kelvin Atsu Djayouri, a frontend engineer dedicated to building the next generation of web interfaces. My approach blends technical precision with artistic vision.
+              </p>
+              <p>
+                Based in Ghana, I specialize in architecting high-performance React applications that aren't just functional, but emotionally resonant. Every line of code is an opportunity to elevate the user experience.
+              </p>
+            </div>
+          </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8 max-w-2xl mx-auto">
-          <div className="glass-card rounded-xl p-4">
-            <div className="text-2xl font-display font-bold gradient-text">3+</div>
-            <div className="text-xs text-muted-foreground mt-1">Years coding</div>
-          </div>
-          <div className="glass-card rounded-xl p-4">
-            <div className="text-xs text-muted-foreground mb-1">Location</div>
-            <div className="font-semibold">Ghana 🇬🇭</div>
-          </div>
-          <div className="glass-card rounded-xl p-4 col-span-2 sm:col-span-1">
-            <div className="text-xs text-muted-foreground mb-1">Focus</div>
-            <div className="font-semibold">React, TypeScript & UX</div>
+          <div className="grid grid-cols-2 gap-6">
+            <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 flex flex-col justify-center shadow-2xl">
+              <span className="text-4xl font-bold text-primary mb-2">03+</span>
+              <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground/50">Years Experience</span>
+            </div>
+            <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 flex flex-col justify-center shadow-2xl">
+              <span className="text-4xl font-bold text-primary mb-2">20+</span>
+              <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground/50">Projects Delivered</span>
+            </div>
+            <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 col-span-2 flex items-center justify-between shadow-2xl">
+               <div>
+                  <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground/50 block mb-1">Current Focus</span>
+                  <span className="text-lg font-bold">React & Premium UI</span>
+               </div>
+               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                  <i className="fa-solid fa-bolt text-primary" />
+               </div>
+            </div>
           </div>
         </div>
       </div>

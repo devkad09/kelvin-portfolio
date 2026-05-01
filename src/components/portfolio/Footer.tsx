@@ -7,22 +7,35 @@ const socials = [
 
 export const Footer = () => {
   return (
-    <footer className="border-t border-border py-10 px-6 md:px-12">
-      <div className="container-narrow flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-sm text-muted-foreground text-center md:text-left">
-          © {new Date().getFullYear()} <span className="text-foreground font-semibold">Kelvin Atsu Djayouri</span>. Crafted with{" "}
-          <i className="fa-solid fa-heart text-primary mx-1" /> and lots of coffee.
+    <footer className="py-20 px-6 md:px-12 bg-white/[0.01] border-t border-white/5 relative overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      
+      <div className="container-narrow flex flex-col md:flex-row items-center justify-between gap-10">
+        <div className="flex flex-col items-center md:items-start gap-4">
+           <div className="font-bold text-xl tracking-tighter">
+              <span className="text-primary">KELVIN</span>
+              <span className="text-white/20">.ENG</span>
+           </div>
+           <div className="text-[10px] uppercase tracking-[0.4em] text-muted-foreground/40 font-bold">
+              EST. 2024 — ACCRA, GHANA
+           </div>
         </div>
-        <div className="flex items-center gap-3">
+
+        <div className="text-xs text-muted-foreground/40 text-center md:text-right font-medium tracking-widest uppercase">
+          © {new Date().getFullYear()} Kelvin Atsu Djayouri. <br />
+          All Rights Reserved.
+        </div>
+
+        <div className="flex items-center gap-6">
           {socials.map((s) => (
             <a
               key={s.icon}
               href={s.href}
               target={s.href.startsWith("http") ? "_blank" : undefined}
               rel="noreferrer"
-              className="w-10 h-10 rounded-full border border-border bg-secondary/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all hover:-translate-y-1"
+              className="text-muted-foreground/30 hover:text-primary transition-all duration-500 hover:scale-125"
             >
-              <i className={s.icon} />
+              <i className={`${s.icon} text-xl`} />
             </a>
           ))}
         </div>

@@ -41,57 +41,54 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border shadow-card" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${scrolled ? "py-4" : "py-10"}`}
     >
-      <nav className="container-narrow flex items-center justify-between h-16 px-6 md:px-12">
-        <button onClick={() => go("home")} className="font-display font-bold text-lg tracking-tight">
-          <span className="gradient-text">Kelvin</span>
-          <span className="text-foreground">.dev</span>
+      <nav className={`container-narrow flex items-center justify-between px-8 md:px-16 transition-all duration-700 ${scrolled ? "h-20 bg-black/40 backdrop-blur-3xl border border-white/5 rounded-full shadow-2xl" : "h-20 bg-transparent"}`}>
+        <button onClick={() => go("home")} className="group flex items-center gap-4">
+          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-black transform transition-transform group-hover:rotate-[360deg] duration-1000">K</div>
+          <span className="text-white font-black tracking-[-0.05em] text-xl hidden sm:block">KELVIN.ATSU</span>
         </button>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-12">
           {links.map((l) => (
             <li key={l.id}>
-              <button onClick={() => go(l.id)} className={`nav-link ${active === l.id ? "active" : ""}`}>
+              <button onClick={() => go(l.id)} className={`nav-link ${active === l.id ? "text-primary" : ""}`}>
                 {l.label}
               </button>
             </li>
           ))}
         </ul>
 
-        <button onClick={() => go("contact")} className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-primary text-primary-foreground text-sm font-semibold glow-on-hover">
-          Hire Me <i className="fa-solid fa-arrow-right text-xs" />
-        </button>
+        <div className="flex items-center gap-6">
+           <button onClick={() => go("contact")} className="hidden md:flex items-center gap-3 px-8 py-3 rounded-full bg-white text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-primary transition-all duration-500 hover:scale-105 active:scale-95">
+             Direct <i className="fa-solid fa-paper-plane" />
+           </button>
 
-        <button
-          aria-label="Toggle menu"
-          className="md:hidden text-foreground text-xl"
-          onClick={() => setOpen((o) => !o)}
-        >
-          <i className={`fa-solid ${open ? "fa-xmark" : "fa-bars"}`} />
-        </button>
+           <button
+             aria-label="Toggle menu"
+             className="lg:hidden text-white text-2xl"
+             onClick={() => setOpen((o) => !o)}
+           >
+             <i className={`fa-solid ${open ? "fa-xmark" : "fa-bars-staggered"}`} />
+           </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 ${open ? "max-h-[480px] border-t border-border bg-background/95 backdrop-blur-xl" : "max-h-0"
-          }`}
+        className={`lg:hidden overflow-hidden transition-all duration-700 ${open ? "max-h-screen bg-black/95 backdrop-blur-3xl" : "max-h-0"}`}
       >
-        <ul className="flex flex-col p-6 gap-4">
+        <ul className="flex flex-col items-center justify-center min-h-[60vh] gap-8 p-12">
           {links.map((l) => (
             <li key={l.id}>
               <button
                 onClick={() => go(l.id)}
-                className={`w-full text-left py-2 nav-link ${active === l.id ? "active" : ""}`}
+                className={`text-2xl font-black uppercase tracking-[0.2em] ${active === l.id ? "text-primary" : "text-white/40"}`}
               >
                 {l.label}
               </button>
             </li>
           ))}
-          <button onClick={() => go("contact")} className="mt-2 px-5 py-3 rounded-full bg-gradient-primary text-primary-foreground font-semibold">
-            Hire Me
-          </button>
         </ul>
       </div>
     </header>

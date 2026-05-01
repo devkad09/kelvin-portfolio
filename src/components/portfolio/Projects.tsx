@@ -37,26 +37,23 @@ export const Projects = () => {
   const visible = active === "All" ? projects : projects.filter((p) => p.categories.includes(active));
 
   return (
-    <section id="projects" className="section-padding">
+    <section id="projects" className="section-padding overflow-hidden">
       <div className="container-narrow">
-        <div className="text-center mb-12 reveal">
-          <span className="text-primary font-mono text-sm uppercase tracking-widest">Projects</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            Selected <span className="gradient-text">Work</span>
+        <div className="text-center mb-20 reveal">
+          <span className="text-primary font-black text-[10px] uppercase tracking-[0.4em]">Works</span>
+          <h2 className="mt-6 tracking-tighter px-4">
+            Curated <span className="gradient-text">Manifesto</span>
           </h2>
-          <p className="text-muted-foreground mt-4 max-w-xl mx-auto">
-            A handful of projects that showcase my approach to building modern web interfaces.
-          </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12 reveal">
+        <div className="flex flex-wrap justify-center gap-4 mb-20 reveal px-4">
           {filters.map((f) => (
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 border ${active === f
-                ? "bg-gradient-primary text-primary-foreground border-transparent shadow-glow"
-                : "bg-secondary/50 border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+              className={`px-8 py-3 rounded-full text-[10px] font-black uppercase tracking-widest transition-all duration-500 border ${active === f
+                ? "bg-white text-black border-white shadow-glow"
+                : "bg-white/5 border-white/10 text-white/40 hover:text-white hover:border-white/30"
                 }`}
             >
               {f}
@@ -64,42 +61,54 @@ export const Projects = () => {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-4">
           {visible.map((p, i) => (
             <article
               key={p.title}
-              className="group glass-card rounded-3xl overflow-hidden reveal glow-on-hover"
-              style={{ transitionDelay: `${i * 80}ms` }}
+              className="group relative flex flex-col glass-card rounded-[3rem] overflow-hidden transition-all duration-700 hover:-translate-y-4 hover:shadow-[0_40px_80px_-15px_rgba(0,0,0,0.8)] reveal"
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <div className="p-6">
-                <h3 className="text-2xl font-display font-bold mb-2 group-hover:text-primary transition-colors">
+              <div className="aspect-[4/3] bg-white/[0.02] relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                   <div className="w-20 h-20 rounded-full bg-white/5 backdrop-blur-3xl border border-white/10 flex items-center justify-center group-hover:scale-125 transition-transform duration-700">
+                      <i className="fa-solid fa-arrow-right -rotate-45 text-2xl text-white group-hover:text-primary transition-colors" />
+                   </div>
+                </div>
+              </div>
+              
+              <div className="p-10 flex-1 flex flex-col relative">
+                <div className="absolute top-0 right-10 -translate-y-1/2 flex gap-2">
+                   {p.tech.slice(0, 2).map((t) => (
+                     <span key={t} className="px-4 py-1 rounded-full bg-white text-black text-[9px] font-black uppercase tracking-widest shadow-2xl">
+                        {t}
+                     </span>
+                   ))}
+                </div>
+
+                <h3 className="text-3xl font-black mb-4 tracking-tighter group-hover:text-primary transition-colors">
                   {p.title}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 leading-relaxed">{p.description}</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {p.tech.map((t) => (
-                    <span key={t} className="text-xs px-3 py-1 rounded-full bg-secondary border border-border text-muted-foreground">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  <a
+                
+                <p className="text-muted-foreground/50 text-sm mb-10 leading-relaxed font-medium">
+                  {p.description}
+                </p>
+                
+                <div className="mt-auto flex items-center justify-between">
+                   <a
                     href={p.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-primary text-primary-foreground text-sm font-semibold glow-on-hover"
-                  >
-                    <i className="fa-solid fa-arrow-up-right-from-square" /> Live Demo
-                  </a>
-                  <a
-                    href={p.repo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border text-foreground text-sm font-semibold hover:border-primary hover:text-primary transition-colors"
-                  >
-                    <i className="fa-brands fa-github" /> GitHub
-                  </a>
+                    className="text-[10px] font-black uppercase tracking-[0.3em] text-white/40 hover:text-primary transition-colors"
+                   >
+                    Explore <i className="fa-solid fa-plus ml-2" />
+                   </a>
+                   
+                   <div className="flex gap-4 opacity-20 group-hover:opacity-100 transition-opacity">
+                      <a href={p.repo} target="_blank" rel="noreferrer" className="text-white hover:text-primary transition-colors">
+                         <i className="fa-brands fa-github text-xl" />
+                      </a>
+                   </div>
                 </div>
               </div>
             </article>
