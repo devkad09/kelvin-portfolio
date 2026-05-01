@@ -51,7 +51,7 @@ export const Hero = () => {
 
         <h1 
           className="font-black leading-[0.9] tracking-[-0.06em] uppercase mb-12 reveal px-4"
-          style={{ fontSize: "clamp(4rem, 15vw, 15rem)" }}
+          style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
         >
            <span className="gradient-text">Kelvin</span>
         </h1>
