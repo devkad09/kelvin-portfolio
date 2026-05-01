@@ -10,7 +10,7 @@ const projects = [
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     categories: ["React"] as Category[],
     demo: "https://mcsteeze-lounge.vercel.app",
-    repo: "#",
+    repo: "https://github.com/devkad09",
   },
   {
     title: "Pure CSS Landing Page",
@@ -18,7 +18,7 @@ const projects = [
     tech: ["HTML5", "CSS3", "Animations"],
     categories: ["CSS"] as Category[],
     demo: "https://pluse-landing.vercel.app",
-    repo: "#",
+    repo: "https://github.com/devkad09",
   },
 ];
 
