@@ -3,20 +3,13 @@ import { useState } from "react";
 type Category = "All" | "React" | "CSS" | "JS";
 
 const projects = [
+ 
   {
-    title: "Insight Analytics Dashboard",
-    description: "A real-time analytics dashboard with charts, filters, and dark mode. Built for a SaaS startup tracking customer engagement.",
-    tech: ["React", "TypeScript", "Tailwind", "Recharts"],
+    title: "McSteeze Lounge & Pub",
+    description: "A luxury landing page for a premier lounge in Ghana, featuring a sophisticated dark/gold aesthetic, interactive menu, and smooth animations.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
     categories: ["React"] as Category[],
-    demo: "#",
-    repo: "#",
-  },
-  {
-    title: "Lumen E-Commerce Store",
-    description: "A modern e-commerce storefront with cart, checkout, and product filtering. Focus on smooth animations and responsive layout.",
-    tech: ["React", "Stripe", "Tailwind", "Framer Motion"],
-    categories: ["React"] as Category[],
-    demo: "#",
+    demo: "https://mcsteeze-lounge.vercel.app",
     repo: "#",
   },
   {
