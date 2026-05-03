@@ -1,52 +1,68 @@
 const items = [
   {
-    role: "Freelance Frontend Developer",
-    company: "Self-Employed",
-    period: "2023 — Present",
-    desc: "Partnering with startups and small businesses to design and build production-ready web apps using React, Tailwind, and modern tooling. Delivered 12+ projects with a focus on performance and accessibility.",
-  },
-  {
-    role: "Frontend Developer",
+    role: "Lead Frontend Architect",
     company: "KAD Tech Studio",
-    period: "2025 - present",
-    desc: "Built customer-facing dashboards and marketing sites. Owned the design system, set up CI workflows, and mentored two junior developers.",
+    period: "2025 — PRESENT",
+    desc: "Orchestrating high-performance React architectures and premium design systems. Focused on building scalable, immersive digital products for high-growth startups.",
   },
   {
-    role: "Technical writer (Part-Time)",
+    role: "Frontend Engineer",
     company: "Formgrid.dev",
-    period: "2026—Present",
-    desc: "Creating technical documentation and content for web development tools and resources.",
+    period: "2026 — PRESENT",
+    desc: "Defining technical documentation standards and building modular interface components for developer-centric tools.",
+  },
+  {
+    role: "Digital Solutions Consultant",
+    company: "Freelance / Independent",
+    period: "2023 — 2025",
+    desc: "Delivered 12+ mission-critical web applications with a focus on motion design and architectural precision. Built a reputation for uncompromising quality.",
   },
 ];
 
 export const Experience = () => {
   return (
-    <section id="experience" className="section-padding bg-secondary/20">
-      <div className="container-narrow">
-        <div className="text-center mb-16 reveal">
-          <span className="text-primary font-mono text-sm uppercase tracking-widest">Experience</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            My <span className="gradient-text">Journey</span>
-          </h2>
+    <section id="experience" className="section-padding relative overflow-hidden">
+      <div className="container-wide reveal">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+          <div className="max-w-2xl">
+            <span className="text-primary font-bold text-sm uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
+              <span className="w-8 h-px bg-primary" />
+              Career
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+              Professional <br />
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Chronicle</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="relative max-w-3xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary via-accent to-transparent md:-translate-x-1/2" />
+        <div className="relative space-y-4">
+          {/* Timeline Line */}
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-white/5 hidden md:block ml-[18px]" />
 
           {items.map((it, i) => (
             <div
               key={it.role}
-              className={`relative mb-12 reveal md:w-1/2 ${i % 2 === 0 ? "md:pr-12" : "md:pl-12 md:ml-auto"}`}
+              className="glass-card group relative overflow-hidden reveal"
+              style={{ transitionDelay: `${i * 150}ms` }}
             >
-              {/* Dot */}
-              <div className={`absolute top-2 w-4 h-4 rounded-full bg-primary shadow-glow ring-4 ring-background left-4 md:left-auto ${i % 2 === 0 ? "md:-right-2" : "md:-left-2"} -translate-x-1/2 md:translate-x-0`} />
+              {/* Left accent line on hover */}
+              <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-              <div className="ml-10 md:ml-0 glass-card rounded-2xl p-6 glow-on-hover">
-                <span className="text-xs font-mono text-primary">{it.period}</span>
-                <h3 className="text-xl font-display font-bold mt-1">{it.role}</h3>
-                <div className="text-muted-foreground text-sm mb-3">{it.company}</div>
-                <p className="text-muted-foreground text-sm leading-relaxed">{it.desc}</p>
+              <div className="grid md:grid-cols-12 gap-8 p-8 md:p-10 items-center">
+                 <div className="md:col-span-3 flex flex-col gap-2">
+                    <span className="text-primary font-bold text-xs uppercase tracking-widest">{it.period}</span>
+                    <div className="h-px w-8 bg-primary/30" />
+                 </div>
+                 
+                 <div className="md:col-span-4">
+                    <h3 className="text-xl md:text-2xl font-bold mb-1 tracking-tight group-hover:text-primary transition-colors duration-300">{it.role}</h3>
+                    <span className="text-xs font-bold uppercase tracking-widest text-white/30">{it.company}</span>
+                 </div>
+
+                 <div className="md:col-span-5">
+                    <p className="text-white/50 text-sm leading-relaxed">{it.desc}</p>
+                 </div>
               </div>
             </div>
           ))}

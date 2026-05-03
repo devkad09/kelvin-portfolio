@@ -1,67 +1,73 @@
-import { useEffect, useState } from "react";
-
 const items = [
   {
     quote:
-      "Kelvin took our rough Figma drafts and turned them into a polished, blazing-fast web app. His eye for detail and clean code made the whole project a breeze.",
+      "Kelvin architected our interface from the ground up. His precision in React and motion design transformed our user engagement metrics entirely.",
     name: "Ama Owusu",
     role: "Founder, Brightline Studio",
+    initials: "AO",
+    color: "from-cyan-400 to-blue-500",
   },
   {
     quote:
-      "Working with Kelvin was effortless. He communicates clearly, ships on time, and genuinely cares about getting the small details right.",
+      "A visionary engineer. Kelvin doesn't just write code; he builds digital systems that feel alive. His attention to performance is unparalleled.",
     name: "Daniel Mensah",
     role: "Product Manager, FinTrack",
+    initials: "DM",
+    color: "from-purple-400 to-pink-500",
   },
   {
     quote:
-      "One of the most reliable frontend developers I've collaborated with. Kelvin elevated our design system and the team learned a lot from him.",
+      "One of the most technically proficient frontend architects I've collaborated with. He elevated our design system to a global standard.",
     name: "Sarah Lin",
     role: "Senior Designer, Pixel Labs",
+    initials: "SL",
+    color: "from-amber-400 to-orange-500",
   },
 ];
 
 export const Testimonials = () => {
-  const [i, setI] = useState(0);
-  useEffect(() => {
-    const t = setInterval(() => setI((v) => (v + 1) % items.length), 6000);
-    return () => clearInterval(t);
-  }, []);
-
   return (
-    <section id="testimonials" className="section-padding">
-      <div className="container-narrow">
-        <div className="text-center mb-12 reveal">
-          <span className="text-primary font-mono text-sm uppercase tracking-widest">Testimonials</span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2">
-            Kind <span className="gradient-text">Words</span>
-          </h2>
+    <section id="testimonials" className="section-padding relative overflow-hidden">
+      <div className="container-wide reveal">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-20">
+          <div className="max-w-2xl">
+            <span className="text-primary font-bold text-sm uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
+              <span className="w-8 h-px bg-primary" />
+              Validation
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight">
+              Kind <br />
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Signals</span>
+            </h2>
+          </div>
         </div>
 
-        <div className="relative max-w-3xl mx-auto reveal">
-          <div className="glass-card rounded-3xl p-8 md:p-12 text-center">
-            <i className="fa-solid fa-quote-left text-5xl text-primary/40 mb-6" />
-            <p className="text-lg md:text-xl text-foreground leading-relaxed font-display min-h-[120px] transition-opacity duration-500">
-              {items[i].quote}
-            </p>
-            <div className="mt-8">
-              <div className="font-semibold">{items[i].name}</div>
-              <div className="text-sm text-muted-foreground">{items[i].role}</div>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {items.map((it, i) => (
+            <div
+              key={it.name}
+              className="glass-card p-8 flex flex-col justify-between min-h-[320px] reveal group"
+              style={{ transitionDelay: `${i * 150}ms` }}
+            >
+              <div className={`text-3xl mb-6 bg-gradient-to-r ${it.color} bg-clip-text text-transparent`}>
+                 <i className="fa-solid fa-quote-left" />
+              </div>
+              
+              <p className="text-base text-white/70 leading-relaxed mb-8 italic flex-1">
+                "{it.quote}"
+              </p>
 
-          <div className="flex justify-center gap-2 mt-6">
-            {items.map((_, idx) => (
-              <button
-                key={idx}
-                aria-label={`Show testimonial ${idx + 1}`}
-                onClick={() => setI(idx)}
-                className={`h-2 rounded-full transition-all ${
-                  idx === i ? "w-8 bg-primary" : "w-2 bg-border hover:bg-muted-foreground"
-                }`}
-              />
-            ))}
-          </div>
+              <div className="mt-auto flex items-center gap-4 border-t border-white/5 pt-6">
+                 <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${it.color} flex items-center justify-center text-xs font-black text-white`}>
+                   {it.initials}
+                 </div>
+                 <div>
+                    <div className="font-bold text-sm">{it.name}</div>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-white/30">{it.role}</div>
+                 </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -1,41 +1,71 @@
 export const About = () => {
   return (
-    <section id="about" className="section-padding bg-white/[0.01]">
-      <div className="container-narrow max-w-5xl mx-auto reveal px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-primary font-bold text-xs uppercase tracking-[0.3em] mb-4 block">Our Story</span>
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter leading-none">
-              Crafting Digital <br />
-              <span className="text-primary">Excellence</span>.
+    <section id="about" className="section-padding relative overflow-hidden">
+      <div className="container-wide reveal">
+        <div className="grid lg:grid-cols-2 gap-24 items-center">
+          <div className="relative">
+            <div className="absolute -top-20 -left-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full" />
+            <span className="text-primary font-bold text-sm uppercase tracking-[0.3em] mb-8 flex items-center gap-4">
+              <span className="w-8 h-px bg-primary" />
+              Who I Am
+            </span>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+              Architecting <br />
+              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Digital Future</span>.
             </h2>
-            <div className="space-y-6 text-muted-foreground/80 leading-relaxed text-lg font-light">
+            <div className="space-y-6 text-white/60 leading-relaxed text-lg max-w-xl">
               <p>
-                I'm Kelvin Atsu Djayouri, a frontend engineer dedicated to building the next generation of web interfaces. My approach blends technical precision with artistic vision.
+                I'm Kelvin Atsu Djayouri, a frontend architect based in Ghana. I specialize in building high-fidelity digital systems that exist at the intersection of performance and aesthetics.
               </p>
               <p>
-                Based in Ghana, I specialize in architecting high-performance React applications that aren't just functional, but emotionally resonant. Every line of code is an opportunity to elevate the user experience.
+                My work is defined by technical precision and a refusal to accept the ordinary. I don't just build websites; I architect immersive digital landscapes that resonate with users.
               </p>
+            </div>
+            
+            <div className="mt-12 flex items-center gap-8">
+               <div>
+                  <div className="text-4xl font-bold text-white mb-1">03+</div>
+                  <div className="text-xs uppercase tracking-widest text-white/40">Years Exp</div>
+               </div>
+               <div className="w-px h-12 bg-white/10" />
+               <div>
+                  <div className="text-4xl font-bold text-white mb-1">25+</div>
+                  <div className="text-xs uppercase tracking-widest text-white/40">Projects</div>
+               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 flex flex-col justify-center shadow-2xl">
-              <span className="text-4xl font-bold text-primary mb-2">03+</span>
-              <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground/50">Years Experience</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="glass-card p-10 flex flex-col justify-between group">
+              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-12 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                <i className="fa-solid fa-code text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Clean Code</h3>
+                <p className="text-sm text-white/40">Writing maintainable, scalable, and performant code is my baseline.</p>
+              </div>
             </div>
-            <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 flex flex-col justify-center shadow-2xl">
-              <span className="text-4xl font-bold text-primary mb-2">20+</span>
-              <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground/50">Projects Delivered</span>
+            
+            <div className="glass-card p-10 flex flex-col justify-between group">
+              <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent mb-12 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <i className="fa-solid fa-wand-magic-sparkles text-xl" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Modern UI</h3>
+                <p className="text-sm text-white/40">Creating interfaces that are not just usable, but visually stunning.</p>
+              </div>
             </div>
-            <div className="p-8 rounded-[2rem] bg-white/[0.03] border border-white/10 col-span-2 flex items-center justify-between shadow-2xl">
-               <div>
-                  <span className="text-xs uppercase tracking-widest font-bold text-muted-foreground/50 block mb-1">Current Focus</span>
-                  <span className="text-lg font-bold">React & Premium UI</span>
+
+            <div className="glass-card p-10 col-span-1 md:col-span-2 flex flex-col gap-6">
+               <div className="flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-widest font-bold text-white/20">Current Focus</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-primary">LIVE</span>
+                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                  </div>
                </div>
-               <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <i className="fa-solid fa-bolt text-primary" />
-               </div>
+               <h3 className="text-2xl font-bold">Advanced React & Immersive Motion Design</h3>
+               <p className="text-white/40 text-sm">Pushing the boundaries of what's possible in the browser through optimized engineering and visionary design principles.</p>
             </div>
           </div>
         </div>
@@ -43,3 +73,5 @@ export const About = () => {
     </section>
   );
 };
+
+
