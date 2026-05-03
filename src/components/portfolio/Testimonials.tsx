@@ -47,7 +47,7 @@ export const Testimonials = () => {
             <div
               key={it.name}
               className="glass-card p-8 flex flex-col justify-between min-h-[320px] reveal group"
-              style={{ transitionDelay: `${i * 150}ms` }}
+              
             >
               <div className={`text-3xl mb-6 bg-gradient-to-r ${it.color} bg-clip-text text-transparent`}>
                  <i className="fa-solid fa-quote-left" />

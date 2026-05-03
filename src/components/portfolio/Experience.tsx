@@ -44,7 +44,7 @@ export const Experience = () => {
             <div
               key={it.role}
               className="glass-card group relative overflow-hidden reveal"
-              style={{ transitionDelay: `${i * 150}ms` }}
+              
             >
               {/* Left accent line on hover */}
               <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

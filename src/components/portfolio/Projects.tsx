@@ -74,7 +74,7 @@ export const Projects = () => {
             <div
               key={p.title}
               className="glass-card group relative overflow-hidden reveal flex flex-col"
-              style={{ transitionDelay: `${i * 150}ms` }}
+              
             >
               {/* Gradient accent bar */}
               <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -120,7 +120,7 @@ export const Projects = () => {
           ))}
 
           {/* CTA Card */}
-          <div className="glass-card p-8 flex flex-col items-center justify-center text-center gap-4 reveal" style={{ transitionDelay: "450ms" }}>
+          <div className="glass-card p-8 flex flex-col items-center justify-center text-center gap-4 reveal">
             <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center text-2xl text-white/20 mb-4">
               <i className="fa-solid fa-code-fork" />
             </div>

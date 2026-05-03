@@ -114,7 +114,7 @@ export const Contact = () => {
               >
                 {sending ? (
                   <>
-                    <i className="fa-solid fa-spinner animate-spin" />
+                    <i className="fa-solid fa-spinner" />
                     Sending...
                   </>
                 ) : (

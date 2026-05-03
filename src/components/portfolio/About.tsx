@@ -61,7 +61,7 @@ export const About = () => {
                   <span className="text-xs uppercase tracking-widest font-bold text-white/20">Current Focus</span>
                   <div className="flex items-center gap-2">
                     <span className="text-[10px] font-bold text-primary">LIVE</span>
-                    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-primary" />
                   </div>
                </div>
                <h3 className="text-2xl font-bold">Advanced React & Immersive Motion Design</h3>

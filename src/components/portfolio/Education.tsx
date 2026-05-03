@@ -29,7 +29,7 @@ export const Education = () => {
             <div
               key={it.school}
               className="glass-card p-10 md:p-14 relative overflow-hidden reveal"
-              style={{ transitionDelay: `${i * 150}ms` }}
+              
             >
               {/* Background Watermark */}
               <div className="absolute top-0 right-0 p-10 text-7xl text-white/[0.02] font-black pointer-events-none select-none">

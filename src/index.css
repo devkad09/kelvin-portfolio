@@ -40,9 +40,6 @@
     --ring: 186 100% 50%;
 
     --radius: 0.75rem;
-
-    /* Custom Transitions */
-    --transition-nebula: all 0.25s ease;
   }
 }
 
@@ -102,11 +99,10 @@
 @layer components {
   .glass-card {
     @apply bg-white/5 backdrop-blur-xl border border-white/10 relative overflow-hidden;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
   .glass-card:hover {
-    @apply border-primary/20 bg-white/8;
+    @apply border-primary/20;
   }
 
   .section-padding {
@@ -117,41 +113,17 @@
     @apply max-w-7xl mx-auto w-full;
   }
 
-  .nebula-glow {
-    @apply relative;
-  }
-
-  .nebula-glow::after {
-    content: '';
-    @apply absolute -inset-1 bg-gradient-to-r from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 rounded-[inherit];
-  }
-
-  .nebula-glow:hover::after {
-    @apply opacity-10;
-  }
-
+  /* reveal: always visible, no animation */
   .reveal {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .reveal.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 
   .btn-nebula {
-    @apply relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full overflow-hidden transition-colors duration-200 hover:brightness-110 active:scale-[0.98];
+    @apply relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full overflow-hidden hover:brightness-110;
   }
 
   .btn-nebula-outline {
-    @apply relative px-8 py-4 border border-white/10 text-white font-bold rounded-full overflow-hidden transition-colors duration-200 hover:bg-white/10 hover:border-white/20;
+    @apply relative px-8 py-4 border border-white/10 text-white font-bold rounded-full overflow-hidden hover:bg-white/10 hover:border-white/20;
   }
 }
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
-}
-
-

@@ -82,7 +82,7 @@ export const Skills = () => {
                 "glass-card p-6 group flex flex-col justify-between reveal overflow-hidden relative",
                 s.span
               )}
-              style={{ transitionDelay: `${i * 40}ms` }}
+              
             >
               {/* Gradient glow on hover */}
               <div className={cn(
@@ -120,7 +120,7 @@ export const Skills = () => {
           {/* Always Learning card */}
           <div
             className="glass-card col-span-1 row-span-1 flex flex-col items-center justify-center gap-3 text-center reveal"
-            style={{ transitionDelay: "480ms" }}
+            
           >
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
               <i className="fa-solid fa-plus text-primary text-lg" />
