@@ -42,7 +42,7 @@
     --radius: 0.75rem;
 
     /* Custom Transitions */
-    --transition-nebula: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-nebula: all 0.25s ease;
   }
 }
 
@@ -102,12 +102,11 @@
 @layer components {
   .glass-card {
     @apply bg-white/5 backdrop-blur-xl border border-white/10 relative overflow-hidden;
-    transition: var(--transition-nebula);
+    transition: border-color 0.2s ease, background-color 0.2s ease;
   }
 
   .glass-card:hover {
-    @apply border-primary/30 bg-white/10;
-    transform: translateY(-4px) scale(1.01);
+    @apply border-primary/20 bg-white/8;
   }
 
   .section-padding {
@@ -124,17 +123,17 @@
 
   .nebula-glow::after {
     content: '';
-    @apply absolute -inset-1 bg-gradient-to-r from-primary to-accent opacity-0 blur-xl transition-opacity duration-500 rounded-[inherit];
+    @apply absolute -inset-1 bg-gradient-to-r from-primary to-accent opacity-0 blur-xl transition-opacity duration-300 rounded-[inherit];
   }
 
   .nebula-glow:hover::after {
-    @apply opacity-20;
+    @apply opacity-10;
   }
 
   .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: var(--transition-nebula);
+    transform: translateY(12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   .reveal.visible {
     opacity: 1;
@@ -142,22 +141,17 @@
   }
 
   .btn-nebula {
-    @apply relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:scale-105 active:scale-95;
+    @apply relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full overflow-hidden transition-colors duration-200 hover:brightness-110 active:scale-[0.98];
   }
 
   .btn-nebula-outline {
-    @apply relative px-8 py-4 border border-white/10 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:bg-white/10 hover:border-white/20;
+    @apply relative px-8 py-4 border border-white/10 text-white font-bold rounded-full overflow-hidden transition-colors duration-200 hover:bg-white/10 hover:border-white/20;
   }
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.1); }
+  50% { transform: translateY(-6px); }
 }
 
 

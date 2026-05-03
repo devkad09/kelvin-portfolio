@@ -82,7 +82,7 @@ export const Skills = () => {
                 "glass-card p-6 group flex flex-col justify-between reveal overflow-hidden relative",
                 s.span
               )}
-              style={{ transitionDelay: `${i * 80}ms` }}
+              style={{ transitionDelay: `${i * 40}ms` }}
             >
               {/* Gradient glow on hover */}
               <div className={cn(
@@ -92,7 +92,7 @@ export const Skills = () => {
 
               {/* Icon */}
               <div className={cn(
-                "bg-gradient-to-br bg-clip-text text-transparent transition-transform duration-500 group-hover:scale-110 w-fit",
+                "bg-gradient-to-br bg-clip-text text-transparent w-fit",
                 s.color,
                 s.iconSize
               )}>

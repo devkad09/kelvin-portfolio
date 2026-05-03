@@ -37,10 +37,10 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden py-20">
-      {/* Dynamic Background Elements */}
+      {/* Background Elements — static blurs, no animation */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
-        <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-accent/20 blur-[120px] rounded-full animate-pulse" style={{ animationDelay: "-2s" }} />
+        <div className="absolute top-[10%] left-[10%] w-[400px] h-[400px] bg-primary/10 blur-[140px] rounded-full" />
+        <div className="absolute bottom-[10%] right-[10%] w-[400px] h-[400px] bg-accent/10 blur-[140px] rounded-full" />
         
         {/* Grid Overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -49,7 +49,7 @@ export const Hero = () => {
       <div className="container-wide w-full px-6 md:px-12 relative z-10 text-center">
         <div className="flex flex-col items-center mb-8 reveal">
            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="w-2 h-2 rounded-full bg-primary" />
               Available for projects
            </span>
         </div>
@@ -64,7 +64,7 @@ export const Hero = () => {
 
         <div className="max-w-3xl mx-auto reveal" style={{ transitionDelay: "200ms" }}>
            <div className="text-xl md:text-3xl font-medium text-white/60 mb-12 min-h-[1.2em]">
-              {text}<span className="inline-block w-0.5 h-[1em] bg-primary ml-1 animate-pulse" />
+              {text}<span className="inline-block w-0.5 h-[1em] bg-primary ml-1 opacity-70" />
            </div>
 
            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -86,8 +86,8 @@ export const Hero = () => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 reveal" style={{ transitionDelay: "500ms" }}>
-         <div className="w-px h-12 bg-gradient-to-b from-primary to-transparent" />
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 reveal" style={{ transitionDelay: "200ms" }}>
+         <div className="w-px h-10 bg-gradient-to-b from-primary to-transparent" />
          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/20">Scroll</span>
       </div>
     </section>
