@@ -1,7 +1,12 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const links = [
+interface NavLink {
+  id: string;
+  label: string;
+}
+
+const links: NavLink[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "skills", label: "Skills" },
@@ -47,13 +52,13 @@ export const Navbar = () => {
     >
       <div className={cn(
         "container-wide flex items-center justify-between px-6 md:px-12 mx-auto transition-all duration-500",
-        scrolled ? "max-w-5xl bg-black/40 backdrop-blur-xl border border-white/10 rounded-full py-3" : "max-w-7xl"
+        scrolled ? "max-w-5xl bg-white/60 backdrop-blur-2xl border border-white/80 rounded-full py-3 shadow-[0_4px_24px_rgba(0,0,0,0.04)]" : "max-w-7xl"
       )}>
         <button onClick={() => go("home")} className="group flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-primary-foreground font-bold group-hover:rotate-12 transition-all duration-500">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center text-white font-bold group-hover:rotate-12 transition-all duration-500 shadow-sm">
             K
           </div>
-          <span className="text-white font-bold tracking-tight text-xl">
+          <span className="text-slate-800 font-bold tracking-tight text-xl">
             Kelvin<span className="text-primary">.</span>
           </span>
         </button>
@@ -65,8 +70,8 @@ export const Navbar = () => {
                 <button 
                   onClick={() => go(l.id)} 
                   className={cn(
-                    "px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:text-primary",
-                    active === l.id ? "text-primary bg-primary/10" : "text-white/60"
+                    "px-4 py-2 text-sm font-medium transition-all duration-300 rounded-full hover:text-primary hover:bg-white/40",
+                    active === l.id ? "text-primary bg-white shadow-sm border border-white/80" : "text-slate-600 border border-transparent"
                   )}
                 >
                   {l.label}
@@ -86,12 +91,12 @@ export const Navbar = () => {
 
            <button
              aria-label="Toggle menu"
-             className="lg:hidden text-white w-10 h-10 flex flex-col justify-center items-center gap-1.5 glass-card rounded-full"
+             className="lg:hidden text-slate-800 w-10 h-10 flex flex-col justify-center items-center gap-1.5 bg-white/60 backdrop-blur-md border border-white/80 rounded-full"
              onClick={() => setOpen((o) => !o)}
            >
-             <span className={cn("h-0.5 bg-white transition-all duration-300 rounded-full", open ? "w-6 rotate-45 translate-y-2" : "w-6")} />
-             <span className={cn("h-0.5 bg-white transition-all duration-300 rounded-full", open ? "opacity-0" : "w-6")} />
-             <span className={cn("h-0.5 bg-white transition-all duration-300 rounded-full", open ? "w-6 -rotate-45 -translate-y-2" : "w-6")} />
+             <span className={cn("h-0.5 bg-slate-800 transition-all duration-300 rounded-full", open ? "w-6 rotate-45 translate-y-2" : "w-6")} />
+             <span className={cn("h-0.5 bg-slate-800 transition-all duration-300 rounded-full", open ? "opacity-0" : "w-6")} />
+             <span className={cn("h-0.5 bg-slate-800 transition-all duration-300 rounded-full", open ? "w-6 -rotate-45 -translate-y-2" : "w-6")} />
            </button>
         </div>
       </div>
@@ -99,7 +104,7 @@ export const Navbar = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 z-[-1] bg-background/95 backdrop-blur-2xl transition-all duration-500 flex items-center justify-center",
+          "lg:hidden fixed inset-0 z-[-1] bg-white/90 backdrop-blur-3xl transition-all duration-500 flex items-center justify-center",
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
@@ -110,7 +115,7 @@ export const Navbar = () => {
                 onClick={() => go(l.id)}
                 className={cn(
                   "text-3xl font-bold tracking-tight transition-all duration-300",
-                  active === l.id ? "text-primary" : "text-white/40 hover:text-white"
+                  active === l.id ? "text-primary scale-110" : "text-slate-500 hover:text-slate-800"
                 )}
               >
                 {l.label}

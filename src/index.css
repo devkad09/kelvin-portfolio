@@ -3,43 +3,43 @@
 @tailwind utilities;
 
 /* =========================================================
-   Kelvin Atsu Djayouri — Nebula Noir Design System
-   A high-end, immersive aesthetic with deep indigo tones,
-   electric cyan accents, and glassmorphic surfaces.
+   Kelvin Atsu Djayouri — Ethereal Glass Design System
+   A soft, modern, Apple-like aesthetic with high-blur glassmorphism,
+   fluid motion, and pastel aurora gradients.
    ========================================================= */
 
 @layer base {
   :root {
-    --background: 240 10% 2%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 15%;
 
-    --card: 240 10% 4%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 15%;
 
-    --popover: 240 10% 4%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 15%;
 
-    /* Brand: Electric Cyan & Hyper Purple */
-    --primary: 186 100% 50%; /* #00F0FF */
-    --primary-foreground: 240 10% 2%;
+    /* Brand: Soft Ethereal Indigo / Purple */
+    --primary: 250 80% 65%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 240 10% 6%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 15%;
 
-    --muted: 240 10% 6%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 5% 45%;
 
-    --accent: 280 100% 60%; /* #BD00FF */
+    --accent: 280 80% 70%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 240 10% 12%;
-    --input: 240 10% 12%;
-    --ring: 186 100% 50%;
+    --border: 240 5% 90%;
+    --input: 240 5% 90%;
+    --ring: 250 80% 65%;
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
   }
 }
 
@@ -56,22 +56,46 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
     background-color: hsl(var(--background));
-    background-image: 
-      radial-gradient(circle at 0% 0%, hsla(186, 100%, 50%, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, hsla(280, 100%, 60%, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, hsla(240, 10%, 5%, 1) 0%, transparent 100%);
-    background-attachment: fixed;
     overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Aurora Mesh Gradient Background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, hsla(280, 80%, 70%, 0.15), transparent 50%),
+                radial-gradient(circle at 80% 20%, hsla(250, 80%, 65%, 0.15), transparent 50%),
+                radial-gradient(circle at 20% 80%, hsla(190, 80%, 65%, 0.15), transparent 50%);
+    z-index: -1;
+    animation: aurora 20s linear infinite alternate;
+    pointer-events: none;
+  }
+
+  @keyframes aurora {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-5%, 5%) scale(1.05);
+    }
+    100% {
+      transform: translate(5%, -5%) scale(1);
+    }
   }
 
   /* Refined Grain Texture */
-  body::before {
+  body::after {
     content: '';
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3%3Ffilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
     opacity: 0.02;
     pointer-events: none;
     z-index: 9999;
@@ -82,27 +106,28 @@
   }
 
   ::selection {
-    background: hsl(var(--primary) / 0.3);
+    background: hsl(var(--primary) / 0.2);
     color: hsl(var(--foreground));
   }
 
-  /* Modern Scrollbar */
-  ::-webkit-scrollbar { width: 6px; }
+  /* Modern Soft Scrollbar */
+  ::-webkit-scrollbar { width: 8px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted-foreground) / 0.2);
-    border-radius: 10px;
+    background: hsl(var(--muted-foreground) / 0.15);
+    border-radius: 20px;
   }
-  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.5); }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary) / 0.4); }
 }
 
 @layer components {
+  /* High-blur glassmorphism */
   .glass-card {
-    @apply bg-white/5 backdrop-blur-xl border border-white/10 relative overflow-hidden;
+    @apply bg-white/40 backdrop-blur-2xl border border-white/60 shadow-[0_8px_32px_rgba(0,0,0,0.04)] relative overflow-hidden rounded-3xl transition-all duration-500;
   }
 
   .glass-card:hover {
-    @apply border-primary/20;
+    @apply border-white/80 shadow-[0_16px_48px_rgba(0,0,0,0.08)] -translate-y-1;
   }
 
   .section-padding {
@@ -113,17 +138,24 @@
     @apply max-w-7xl mx-auto w-full;
   }
 
-  /* reveal: always visible, no animation */
+  /* Fluid Scroll reveal animations */
   .reveal {
-    opacity: 1;
-    transform: none;
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  /* Soft modern buttons */
   .btn-nebula {
-    @apply relative px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full overflow-hidden hover:brightness-110;
+    @apply relative px-8 py-4 bg-primary text-white font-medium rounded-full overflow-hidden hover:shadow-[0_0_20px_hsla(250,80%,65%,0.4)] shadow-sm transition-all duration-300 transform hover:scale-[1.02];
   }
 
   .btn-nebula-outline {
-    @apply relative px-8 py-4 border border-white/10 text-white font-bold rounded-full overflow-hidden hover:bg-white/10 hover:border-white/20;
+    @apply relative px-8 py-4 bg-white/50 backdrop-blur-md border border-white/80 text-foreground font-medium rounded-full overflow-hidden hover:bg-white hover:shadow-md transition-all duration-300 transform hover:scale-[1.02];
   }
 }
